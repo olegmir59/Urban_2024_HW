@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8112ce75-c4ef-4f40-b81b-e6e9837e7ad3" name="Changes" comment="Add File">
-      <change afterPath="$PROJECT_DIR$/funcs_by_hands.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_5_1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,8 +56,10 @@
     "Python.module_3_4.executor": "Run",
     "Python.module_3_5.executor": "Run",
     "Python.module_3_hard.executor": "Run",
+    "Python.module_5_1.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master"
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Projects/Python/Urban_2020_HW/pythonProject1"
   }
 }]]></component>
   <component name="RunManager">
