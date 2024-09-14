@@ -78,7 +78,11 @@ class House:
 
     def __iadd__(self, value):
         return  House.__add__(self, value)
+    def __del__(self):
+        print(self.name,'снесён, но он останется в истории')
 
+
+h0 = House('Небоскёб Призрак', 110)
 h1 = House('ЖК Эльбрус', 10)
 print(House.houses_history)
 h2 = House('ЖК Акация', 20)
@@ -86,5 +90,11 @@ print(House.houses_history)
 h3 = House('ЖК Матрёшки', 20)
 print(House.houses_history)
 
-
+# Удаление объектов
+del h2
+del h3
+print()
 print("Список созданных домов: ",  House.houses_history)
+print()
+print("Перед завершением программы удаляются все оставшиеся объекты, поэтому")
+print("Список удаленных оставшихся созданных домов: ")
