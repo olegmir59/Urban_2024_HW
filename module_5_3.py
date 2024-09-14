@@ -20,46 +20,28 @@ class House:
         return "Название: " + str(self.name) + ", кол-во этажей: " + str(self.number_of_floors)
 
     def __eq__(self, other):
-        answ_ = False
         if isinstance(other, House) and isinstance(other.number_of_floors, int):
-            if self.number_of_floors == other.number_of_floors:
-                answ_ = True
-        return answ_
+            return self.number_of_floors == other.number_of_floors
 
-    def __Lt__(self, other):
-        answ_ = False
-        if isinstance(other, House) and isinstance(other.number_of_floors, int):
-            if self.number_of_floors < other.number_of_floors:
-                answ_ = True
-        return answ_
+    def __lt__(self, other):
+         if isinstance(other, House) and isinstance(other.number_of_floors, int):
+             return self.number_of_floors < other.number_of_floors
 
-    def __Le__(self, other):
-        answ_ = False
+    def __le__(self, other):
         if isinstance(other, House) and isinstance(other.number_of_floors, int):
-            if self.number_of_floors <= other.number_of_floors:
-                answ_ = True
-        return answ_
+            return self.number_of_floors <= other.number_of_floors
 
     def __gt__(self, other):
-        answ_ = False
         if isinstance(other, House) and isinstance(other.number_of_floors, int):
-            if self.number_of_floors > other.number_of_floors:
-                answ_ = True
-        return answ_
+            return self.number_of_floors > other.number_of_floors
 
     def __ge__(self, other):
-        answ_ = False
         if isinstance(other, House) and isinstance(other.number_of_floors, int):
-            if self.number_of_floors == other.number_of_floors:
-                answ_ = True
-        return answ_
+            return self.number_of_floors == other.number_of_floors
 
     def __ne__(self, other):
-        answ_ = False
-        if isinstance(other, House) and isinstance(other.number_of_floors, int):
-            if self.number_of_floors != other.number_of_floors:
-                answ_ = True
-        return answ_
+       if isinstance(other, House) and isinstance(other.number_of_floors, int):
+           return self.number_of_floors != other.number_of_floors
 
     def __add__(self, value):
         if isinstance(value, int):
