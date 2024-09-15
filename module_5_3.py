@@ -37,7 +37,7 @@ class House:
 
     def __ge__(self, other):
         if isinstance(other, House) and isinstance(other.number_of_floors, int):
-            return self.number_of_floors == other.number_of_floors
+            return self.number_of_floors >= other.number_of_floors
 
     def __ne__(self, other):
        if isinstance(other, House) and isinstance(other.number_of_floors, int):
