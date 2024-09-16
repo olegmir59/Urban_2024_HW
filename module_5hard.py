@@ -12,7 +12,6 @@ class User:
     def __str__(self):
             return self.nickname + ' ' + str(self.password) + ' age: ' + str(self.age)
 
-
 class Video:
     def __init__(self, title, duration, time_now=0, adult_mode=False):
         self.title = title
