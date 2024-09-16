@@ -1,5 +1,6 @@
 # Дополнительное практическое задание по модулю: "Классы и объекты."
 # Задание "Свой YouTube":
+
 import time
 
 class User:
@@ -10,20 +11,6 @@ class User:
 
     def __str__(self):
             return self.nickname + ' ' + str(self.password) + ' age: ' + str(self.age)
-
-        #self.password = hash((self.age, self.nickname))
-
-"""     Вариант перегрузки операторов cравнения объектов класса User
-    def __eq__(self, other):
-        return self.nickname == other.nickname and self.password == other.password and self.age == other.age
-    def __hash__(self):
-        return hash((self.nickname, self.password, self.age))
-"""
-
-
-
-
-
 
 
 class Video:
@@ -61,8 +48,8 @@ class UrTube:
         self.log_in(nickname, password)
 
     def log_out(self):
-        for user_ in self.users:
-           self.current_user = None
+        self.current_user = None
+        print("Вы вышли из аккаунта, чтобы смотреть видео войдите снова")
 
     def add(self, *args):
         for vid_in in args:
@@ -85,8 +72,10 @@ class UrTube:
     def watch_video(self, find_string):
         if self.current_user == None:
             print("Войдите в аккаунт, чтобы смотреть видео")
+            return -1
         elif self.current_user.age <= 18:
             print("Вам нет 18 лет, пожалуйста покиньте страницу")
+            return 0
         else:
             for vid_in in self.videos:
                 if str(find_string).lower() == str(vid_in.title).lower():
@@ -96,8 +85,8 @@ class UrTube:
                          time.sleep(1)
                          print(" ", i,  end="")
                      print("\n =================== Конец видео=====================")
-                else:
-                    print("Не нашли видеопо запросу:: ", find_string)
+                     return 1
+            print("Не нашли видео по запросу:: ", find_string)
 
 
 ur = UrTube([],[], None )
@@ -128,10 +117,12 @@ ur.watch_video('Для чего девушкам парень программи
 ur.register('urban_pythonist', 'iScX4vIJClb9YQavjAgF', 25)
 print(ur.current_user)
 ur.watch_video('Для чего девушкам парень программист?')
+ur.log_out()
 
-# Проверка входа в другой аккаунт
+# Проверка входа в другой аккаунт.  Вася не дурак!
 ur.register('vasya_pupkin', 'F8098FM8fjm9jmi', 55)
 print(ur.current_user)
+ur.watch_video('Для чего девушкам парень программист?')
 
 # Попытка воспроизведения несуществующего видео
 ur.watch_video('Лучший язык программирования 2024 года!')
