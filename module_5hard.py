@@ -10,7 +10,7 @@ class User:
         self.age = age
 
     def __str__(self):
-            return self.nickname + ' ' + str(self.password) + ' age: ' + str(self.age)
+            return self.nickname
 
 class Video:
     def __init__(self, title, duration, time_now=0, adult_mode=False):
@@ -27,23 +27,25 @@ class UrTube:
         self.current_user = current_user
 
     def log_in(self, nickname, password):
+        find_ = False
         for user_ in self.users:
-            #  print("log_in")
-            #  print(user_)
             if (nickname == user_.nickname and hash(password) == user_.password):
                 self.current_user = user_
-            #    print("log_in  пользователь  найден:", user_)
-            else:
-                print("** log_in**  Пользователь с указанным паролем не найден!  ", nickname, "Зарегистрируйтесь!")
+                find_ = True
+        if not find_:
+            print("** log_in**  Пользователь с указанным паролем не найден!  ", nickname, "Зарегистрируйтесь!")
 
 
     def register(self, nickname, password, age):
-        if nickname in self.users:
-            print("Пользователь ", nickname, " уже существует")
-        else:
-            new_user = User(nickname, password, age)
-            self.users.append(new_user)
-            print("Пользователь ", nickname, " добавлен в список")
+        find_ = False
+        for user_ in self.users:
+            if nickname == user_.nickname:
+                print("Пользователь ", nickname, " уже существует")
+                find_ = True
+        if not find_:
+                new_user = User(nickname, password, age)
+                self.users.append(new_user)
+                print("Пользователь ", nickname, " добавлен в список")
         self.log_in(nickname, password)
 
     def log_out(self):
@@ -54,9 +56,6 @@ class UrTube:
         for vid_in in args:
             if vid_in.title not in self.videos:
                 self.videos.append(vid_in)
-        print("после добавления видео:")
-        for i in self.videos:
-            print(i.title)
 
     def get_videos(self, find_string):
         videos_list = []
@@ -72,19 +71,21 @@ class UrTube:
         if self.current_user == None:
             print("Войдите в аккаунт, чтобы смотреть видео")
             return -1
-        elif self.current_user.age <= 18:
-            print("Вам нет 18 лет, пожалуйста покиньте страницу")
-            return 0
         else:
             for vid_in in self.videos:
                 if str(find_string).lower() == str(vid_in.title).lower():
-                     print("нашли видео по запросу: ", find_string)
-                     print("\n =====  Старт видео  ==== Приятного просмотра ! =====")
-                     for i in range(vid_in.duration):
-                         time.sleep(1)
-                         print(" ", i,  end="")
-                     print("\n =================== Конец видео=====================")
-                     return 1
+                    if self.current_user.age <= 18 and vid_in.adult_mode:
+                          print("Вам нет 18 лет, пожалуйста покиньте страницу")
+                          return 0
+
+                    print("нашли видео по запросу: ", find_string)
+                    print("\n =====  Старт видео  ==== Приятного просмотра ! =====")
+                    for i in range(1,vid_in.duration+1):
+                             time.sleep(1)
+                             print(" ", i,  end="")
+                    print("\n =================== Конец видео=====================")
+                    return 1
+
             print("Не нашли видео по запросу:: ", find_string)
 
 
@@ -92,36 +93,44 @@ ur = UrTube([],[], None )
 #  print(ur)
 
 v1 = Video('Лучший язык программирования 2024 года', 200)
-v2 = Video('Для чего девушкам парень программист?', 10, adult_mode=True)
+v2 = Video('Для чего девушкам парень программист?', 7, adult_mode=True)
+v3 = Video('Фиксики', 3, adult_mode=False)
 
-# Добавление видео
-ur.add(v1, v2)
+#       Добавление видео
+ur.add(v1, v2, v3)
 
-# Проверка поиска
+#       Проверка поиска
 print(*ur.get_videos('2024'))
 print(*ur.get_videos('лучший'))
 print(*ur.get_videos('худший'))
 print(*ur.get_videos('ПРОГ'))
 
-# Проверка на вход пользователя и возрастное ограничение
+#       Проверка на вход пользователя и возрастное ограничение
 
 ur.register('vasya_pupkin', 'lolkekcheburek', 13)
+#        проверка  ребенок - взрослый фильм
 ur.watch_video('Для чего девушкам парень программист?')
+print(ur.current_user)
+#         проверка  ребенок - детский фильм
+ur.watch_video('Фиксики')
 
+#         указан неверный  пароль
 ur.log_in('vasya_pupkin', 'lolkek')
-ur.log_in('vasya_pupkin', 'lolkekcheburek')
+#ur.log_in('vasya_pupkin', 'lolkekcheburek')
 
-
+print(ur.current_user)
 ur.watch_video('Для чего девушкам парень программист?')
+
 ur.register('urban_pythonist', 'iScX4vIJClb9YQavjAgF', 25)
 print(ur.current_user)
 ur.watch_video('Для чего девушкам парень программист?')
+#       выход из аккаунта
 ur.log_out()
-
-# Проверка входа в другой аккаунт.  Вася не дурак!
-ur.register('vasya_pupkin', 'F8098FM8fjm9jmi', 55)
+print(ur.current_user)
+#        Проверка входа в другой аккаунт.  Вася не дурак!
+ur.register('vasya_pupkin стал старше', 'F8098FM8fjm9jmi', 55)
 print(ur.current_user)
 ur.watch_video('Для чего девушкам парень программист?')
-
-# Попытка воспроизведения несуществующего видео
+print()
+#        Попытка воспроизведения несуществующего видео
 ur.watch_video('Лучший язык программирования 2024 года!')
