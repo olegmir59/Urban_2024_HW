@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8112ce75-c4ef-4f40-b81b-e6e9837e7ad3" name="Changes" comment="Modify File">
-      <change afterPath="$PROJECT_DIR$/module_6_2.py" afterDir="false" />
+    <list default="true" id="8112ce75-c4ef-4f40-b81b-e6e9837e7ad3" name="Changes" comment="Add File">
+      <change afterPath="$PROJECT_DIR$/module_6_3.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -260,7 +260,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726599735668</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Add File">
+      <option name="closed" value="true" />
+      <created>1726647224448</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1726647224448</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -275,12 +283,12 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add File" />
     <MESSAGE value="Refactor File" />
     <MESSAGE value="Add Ntw File" />
     <MESSAGE value="Fixed the error" />
     <MESSAGE value="Modify File" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modify File" />
+    <MESSAGE value="Add File" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add File" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
