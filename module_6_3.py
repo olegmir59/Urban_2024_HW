@@ -2,6 +2,8 @@
 #  Цель: закрепить знания множественного наследования в Python.
 #
 # Задача "Мифическое наследование":
+
+
 class Horse:
     x_distance = 0
     sound_hors = 'Frrr'
@@ -9,12 +11,14 @@ class Horse:
     def run(self, dx):
         self.x_distance += dx
 
+
 class Eagle:
     y_distance = 0
     sound = 'I train, eat, sleep, and repeat'
 
     def fly(self, dy):
         self.y_distance += dy
+
 
 class Pegasus(Horse, Eagle):
 
@@ -36,7 +40,6 @@ class Pegasus(Horse, Eagle):
 
 p1 = Pegasus()
 
-print(Pegasus.mro())
 print(p1.get_pos())
 p1.move(10, 15)
 print(p1.get_pos())
