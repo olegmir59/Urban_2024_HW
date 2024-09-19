@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8112ce75-c4ef-4f40-b81b-e6e9837e7ad3" name="Changes" comment="Add File">
+    <list default="true" id="8112ce75-c4ef-4f40-b81b-e6e9837e7ad3" name="Changes" comment="Refactor">
+      <change afterPath="$PROJECT_DIR$/m_6_3.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module_6_3.py" beforeDir="false" afterPath="$PROJECT_DIR$/module_6_3.py" afterDir="false" />
     </list>
@@ -46,29 +47,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.02_snowflake.executor&quot;: &quot;Run&quot;,
-    &quot;Python.funcs_by_hands.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.modul_1_3.executor&quot;: &quot;Run&quot;,
-    &quot;Python.module_3_3.executor&quot;: &quot;Run&quot;,
-    &quot;Python.module_3_4.executor&quot;: &quot;Run&quot;,
-    &quot;Python.module_3_5.executor&quot;: &quot;Run&quot;,
-    &quot;Python.module_3_hard.executor&quot;: &quot;Run&quot;,
-    &quot;Python.module_5_1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.module_5_2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.module_5_3.executor&quot;: &quot;Run&quot;,
-    &quot;Python.module_5hard.executor&quot;: &quot;Run&quot;,
-    &quot;Python.module_6_1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.module_6_2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.module_6_3.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Файл module_5_4.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Projects/Python/Urban_2020_HW/pythonProject1&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.02_snowflake.executor": "Run",
+    "Python.funcs_by_hands.executor": "Run",
+    "Python.m_6_3.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.modul_1_3.executor": "Run",
+    "Python.module_3_3.executor": "Run",
+    "Python.module_3_4.executor": "Run",
+    "Python.module_3_5.executor": "Run",
+    "Python.module_3_hard.executor": "Run",
+    "Python.module_5_1.executor": "Run",
+    "Python.module_5_2.executor": "Run",
+    "Python.module_5_3.executor": "Run",
+    "Python.module_5hard.executor": "Run",
+    "Python.module_6_1.executor": "Run",
+    "Python.module_6_2.executor": "Run",
+    "Python.module_6_3.executor": "Run",
+    "Python.Файл module_5_4.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Projects/Python/Urban_2020_HW/pythonProject1"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="pythonProject1" />
@@ -277,7 +279,23 @@
       <option name="project" value="LOCAL" />
       <updated>1726658309631</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Refactor">
+      <option name="closed" value="true" />
+      <created>1726721279583</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1726721279583</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Refactor">
+      <option name="closed" value="true" />
+      <created>1726721961639</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1726721961639</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -297,7 +315,8 @@
     <MESSAGE value="Fixed the error" />
     <MESSAGE value="Modify File" />
     <MESSAGE value="Add File" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add File" />
+    <MESSAGE value="Refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
