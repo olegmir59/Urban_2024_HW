@@ -67,7 +67,7 @@ class Circle(Figure):
         #__ 3,14159
 
 
-circle1 = Circle((200, 200, 100), 10) # (Цвет, стороны)
+circle1 = Circle((200, 200, 100), [10])   # (Цвет, стороны)
 print(circle1.get_sides())
 circle1.set_color(55, 66, 77) # Изменится
 circle1.set_sides(15) # Изменится
