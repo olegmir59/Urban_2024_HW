@@ -46,8 +46,8 @@ class Figure:
 
     def set_sides(self, *new_sides):
         list_sides = list(new_sides)
-    #    if not self.__is_valid_sides(list_sides):
-    #        return
+        if not self.__is_valid_sides(list_sides):
+            return
         self.__sides = list_sides
 
 class Circle(Figure):
@@ -107,7 +107,7 @@ class Cube(Figure):
 
     def get_square(self):
         cube_side = self.get_sides()[0]
-        return 6 * cube_side ** 2
+        return 6 *( cube_side ** 2)
 
     def get_volume(self):
         cube_side = self.get_sides()[0]
@@ -118,7 +118,7 @@ circle1 = Circle((200, 200, 100), 10)           # (Цвет, сторона = д
 triangle1 = Triangle((100, 199, 199),3)   # реугольник  стороны = 3    -> (3,3.3)
 print(triangle1.get_sides())
 triangle1 = Triangle((100, 199, 199),3,5,4)   # реугольник  стороны = (3,5,4)
-
+print(triangle1.get_sides())
 cube1 = Cube((222, 35, 130), 3)  # Куб   сторона = 3
 print(cube1.get_sides())
 
@@ -132,8 +132,8 @@ cube1.set_color(256, 70, 15) # Не изменится
 print(cube1.get_color())
 
 print(" Проверка на изменение сторон")
-cube1.set_sides(4)                    #  изменится   ?
-print(cube1.get_sides())                 #                   ?
+cube1.set_sides(4)                    #  изменится
+print(cube1.get_sides())
 circle1.set_sides(15) # Изменится
 print(circle1.get_sides())
 print(len(triangle1))
@@ -148,7 +148,9 @@ print(len(triangle1))
 triangle1.set_sides(3,4,5)
 print(triangle1.get_sides())
 print(len(triangle1))
-print(len(cube1))
+c23 = Cube((200, 200, 100), 8)
+print(" Проверка периметра куба:")
+print(len(c23))
 
 print(" Проверка площади(круга)")
 print(circle1.get_square())
@@ -156,10 +158,9 @@ print(circle1.get_square())
 print(" Проверка площади треугольника")
 print(triangle1.get_square())
 print(" Проверка площади поверхности куба")
-print(cube1.get_square())
-
+print(c23.get_square())
 print("  Проверка объёма (куба):")
-print(cube1.get_volume())
+print(c23.get_volume())
 
 
 '''ВАЖНО!
@@ -171,8 +172,9 @@ print(c23.get_sides())
 print("Пример 2:")
 t23 =Triangle((200, 200, 100), 10, 6)  #, т.к. сторон у треугольника 3, то его стороны будут - [1, 1, 1]
 print(t23.get_sides())
-
-#Пример 3: Cube((200, 200, 100), 9), т.к. сторон(рёбер) у куба - 12, то его стороны будут - [9, 9, 9, ....., 9] (12)
-#Пример 4:
+print("Пример 3:")
+c23 = Cube((200, 200, 100), 9)  # т.к. рёбер у куба - 12, то его стороны будут - [9, 9, 9, ....., 9] (12)
+print(c23.get_sides())
+print("Пример 4:")
 c23 =Cube((200, 200, 100), 9, 12)  # т.к. рёбер) у куба - 12, то его стороны будут - [1, 1, 1, ....., 1]
 print(c23.get_sides())
